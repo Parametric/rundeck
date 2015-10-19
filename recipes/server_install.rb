@@ -46,7 +46,6 @@ else
     source node['rundeck']['url']
     owner node['rundeck']['user']
     group node['rundeck']['group']
-    checksum node['rundeck']['checksum']
     mode '0644'
   end
 

@@ -6,7 +6,6 @@ default['rundeck']['deb']['package'] = 'rundeck-2.4.2-1-GA.deb'
 default['rundeck']['deb']['options'] = false #--force-confdef --force-confold
 default['rundeck']['rpm']['version'] = '2.5.3-1.10.GA' # rundeck package from http://dl.bintray.com/rundeck/rundeck-rpm
 default['rundeck']['url'] = "http://download.rundeck.org/deb/#{node['rundeck']['deb']['package']}"
-default['rundeck']['checksum'] = 'd2038440542b64921449e4ea0d7899f723bb29a58d713532fb8a0ab434ddac89'
 default['rundeck']['port'] = 4440
 default['rundeck']['jaas'] = 'internal'
 default['rundeck']['default_role'] = 'user'
@@ -116,5 +115,3 @@ default['rundeck']['ldap']['reportstatistics'] = 'true'
 default['rundeck']['ldap']['supplementalroles'] = node['rundeck']['default_role']
 
 # Plugins
-default['rundeck']['plugin']['slack'] = 'https://github.com/higanworks/rundeck-slack-incoming-webhook-plugin/releases/download/v0.3.dev/rundeck-slack-incoming-webhook-plugin-0.3.jar'
-

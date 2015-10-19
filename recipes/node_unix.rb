@@ -35,6 +35,7 @@ user node['rundeck']['user'] do
   system true
   shell '/bin/bash'
   home node['rundeck']['user_home']
+  ignore_failure true
 end
 
 directory node['rundeck']['user_home'] do
