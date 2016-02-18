@@ -112,12 +112,11 @@ file "#{node['rundeck']['basedir']}/.ssh/id_rsa" do
   notifies (node['rundeck']['restart_on_config_change'] ? :restart : :nothing), 'service[rundeck]', :delayed
 end
 
-cookbook_file "#{node['rundeck']['basedir']}/libext/rundeck-winrm-plugin-1.1.jar" do
-  owner node['rundeck']['user']
-  group node['rundeck']['group']
-  mode '0644'
-  backup false
-  source 'rundeck-winrm-plugin-1.1.jar'
+remote_file "#{node['rundeck']['basedir']}/libext/rundeck-winrm-plugin-1.3.1.jar" do
+  owner  node['rundeck']['user']
+  group  node['rundeck']['group']
+  mode   '0644'
+  source 'https://github.com/rundeck-plugins/rundeck-winrm-plugin/releases/download/v1.3.1/rundeck-winrm-plugin-1.3.1.jar'
   notifies (node['rundeck']['restart_on_config_change'] ? :restart : :nothing), 'service[rundeck]', :delayed
 end
 
